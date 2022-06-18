@@ -4,6 +4,7 @@ import { Input } from '../components/Form/Input';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Router from 'next/router';
 
 type SignInFormData = {
   email?: string;
@@ -27,6 +28,7 @@ const SignIn: NextPage = () => {
 
   const handleSignIn: SubmitHandler<SignInFormData> = async (values, event) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
+    Router.push('/dashboard');
     console.log(values);
   };
 
