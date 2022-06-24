@@ -9,7 +9,7 @@ export function Header() {
     <Flex
       as="header"
       w="100%"
-      maxWidth={1440}
+      // maxWidth={1440}
       bg="gray.700"
       h={200}
       mx="auto"
