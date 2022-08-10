@@ -40,6 +40,15 @@ export const Content = styled(Dialog.Content)`
       }
     }
 
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+
     button[type='submit'] {
       height: 58px;
       border: 0;
