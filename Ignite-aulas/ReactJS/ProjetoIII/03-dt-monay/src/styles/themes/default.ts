@@ -17,4 +17,4 @@ export const defaultTheme = {
   'red-300': '#F75A68',
   'red-500': '#AB222E',
   'red-700': '#7A1921',
-} as const; // garante que o valor das cores nunca vai mudar - substitui a string pelo seu valor
+} as const // garante que o valor das cores nunca vai mudar - substitui a string pelo seu valor
