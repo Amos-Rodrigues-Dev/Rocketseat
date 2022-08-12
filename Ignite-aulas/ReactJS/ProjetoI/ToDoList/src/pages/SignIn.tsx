@@ -49,12 +49,14 @@ export function SignIn() {
           <Input
             type="email"
             label="E-mail"
+            placeholder='email@qualquer.com'
             error={errors.email}
             {...register('email')}
           />
           <Input
             type="password"
             label="Senha"
+            placeholder='123456'
             error={errors.password}
             {...register('password')}
           />
