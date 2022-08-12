@@ -22,7 +22,7 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
   return (
     <div className={styles.comment}>
       <Avatar
-        src="https://github.com/Amos-Rodrigues-Dev.png"
+        src="https://github.com/amosrodrigues.png"
         hasBorder={false}
       />
 
