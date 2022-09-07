@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getSession, useSession } from 'next-auth/react';
+import { getSession, useSession } from 'next-auth/react'; //next-auth/client
 import { fauna } from '../../services/fauna';
 import { stripe } from '../../services/stripe';
 import { query as q } from 'faunadb';
@@ -16,7 +16,8 @@ type User = {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const { data: session } = useSession();
+    const session = await getSession({ req });
+    // const { data: session } = useSession();
 
     const user = await fauna.query<User>(
       q.Get(
@@ -49,7 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       billing_address_collection: 'required',
       line_items: [
         {
-          price: 'price_1KYZoYIvgFOa4HOg5Rb5DCXe',
+          price: 'price_1L4vZUIiJf3luURbKfJbqJKF',
           quantity: 1,
         },
       ],
