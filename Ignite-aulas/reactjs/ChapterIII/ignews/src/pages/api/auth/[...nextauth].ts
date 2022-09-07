@@ -1,4 +1,5 @@
 import { query as q } from 'faunadb';
+
 import NextAuth from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 
@@ -12,7 +13,7 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET!,
       authorization: {
         params: {
-          scope: 'repo read:user user:email',
+          scope: 'read:user',
         },
       },
     }),
