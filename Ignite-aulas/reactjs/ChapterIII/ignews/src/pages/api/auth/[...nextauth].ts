@@ -8,11 +8,11 @@ export default NextAuth({
   // Configure one or more authentication providers
   providers: [
     GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
       authorization: {
         params: {
-          scope: 'read:user',
+          scope: 'repo read:user user:email',
         },
       },
     }),
@@ -42,6 +42,7 @@ export default NextAuth({
         );
         return true;
       } catch (error) {
+        console.error(error)
         return false;
       }
     },
