@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getSession, useSession } from 'next-auth/react'; //next-auth/client
+import { getSession } from 'next-auth/react'; //next-auth/client
 import { fauna } from '../../services/fauna';
 import { stripe } from '../../services/stripe';
 import { query as q } from 'faunadb';
@@ -17,8 +17,6 @@ type User = {
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const session = await getSession({ req });
-    // const { data: session } = useSession();
-    console.log('aqui');
     
     const user = await fauna.query<User>(
       q.Get(
