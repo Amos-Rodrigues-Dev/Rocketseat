@@ -20,7 +20,7 @@ const Home = ({ product }: HomeProps) => {
   return (
     <>
       <Head>
-        <title>Home | ig.news</title>
+        <title>Home | Ig.news</title>
       </Head>
 
       <main className={styles.contentContanier}>
