@@ -7,7 +7,9 @@ import cors from 'cors';
 import { router } from './routes';
 import swaggerFile from './swagger.json';
 
-import './database';
+import { createConnection } from './database/data-source';
+
+createConnection();
 
 const app = express();
 const PORT = 3333;
