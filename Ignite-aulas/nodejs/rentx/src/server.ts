@@ -5,10 +5,10 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 import { createConnection } from './database/data-source';
-createConnection();
-
 import { router } from './routes';
 import swaggerFile from './swagger.json';
+
+createConnection();
 
 const app = express();
 const PORT = 3333;
