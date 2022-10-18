@@ -4,12 +4,11 @@ import swaggerUi from 'swagger-ui-express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
+import { createConnection } from './database/data-source';
+createConnection();
+
 import { router } from './routes';
 import swaggerFile from './swagger.json';
-
-import { createConnection } from './database/data-source';
-
-createConnection();
 
 const app = express();
 const PORT = 3333;
