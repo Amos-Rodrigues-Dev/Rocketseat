@@ -6,7 +6,10 @@ import cors from 'cors';
 
 import { createConnection } from './database/data-source';
 import { router } from './routes';
+
 import swaggerFile from './swagger.json';
+
+import './shared/container';
 
 createConnection();
 
