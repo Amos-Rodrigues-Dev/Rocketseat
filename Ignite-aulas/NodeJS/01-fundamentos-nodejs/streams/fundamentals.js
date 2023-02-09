@@ -1,4 +1,4 @@
-// Streams ->
+// Streams -> Mecanismos para ler e escrever dados de forma assíncrona, controlada e em partes
 
 // process.stdin.pipe(process.stdout);
 
