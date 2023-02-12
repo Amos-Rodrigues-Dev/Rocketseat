@@ -7,7 +7,7 @@ const envSchema = z.object({
   PORT: z.number().default(3333),
 })
 
-const _env = envSchema.safeParse(process.env)
+const _env = envSchema.safeParse(process.env) // safeParse não dispara o erro caso a validação falhe
 
 if (_env.success === false) {
   console.error('⚡ Invalid envioronment variables!', _env.error.format())
