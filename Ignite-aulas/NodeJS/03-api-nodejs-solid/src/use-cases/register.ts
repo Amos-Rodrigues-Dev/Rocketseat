@@ -1,3 +1,4 @@
+import { UsersRepository } from '@/repositories/users-repository'
 import { hash } from 'bcryptjs'
 
 interface RegisterUseCaseRequest {
@@ -7,12 +8,12 @@ interface RegisterUseCaseRequest {
 }
 
 export class RegisterUseCase {
-  constructor(private usersRepository: any) {}
+  constructor(private usersRepository: UsersRepository) {}
 
   async execute({ name, email, password }: RegisterUseCaseRequest) {
     const password_hash = await hash(password, 6)
 
-    const userWithSameEmail = await this.usersRepository.getUserByEmail(email)
+    const userWithSameEmail = await this.usersRepository.findByEmail(email)
 
     if (userWithSameEmail) {
       throw new Error('E-mail already exists.')
