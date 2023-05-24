@@ -36,27 +36,4 @@ describe('Fetch Nearby Gyms Use Case', () => {
     expect(gyms).toHaveLength(1)
     expect(gyms).toEqual([expect.objectContaining({ title: 'Near Gym' })])
   })
-
-  // it.skip('should be able to fetch paginated gym search', async () => {
-  //   for (let i = 1; i <= 22; i++) {
-  //     await gymsRepository.create({
-  //       title: `JavaScript Gym ${i}`,
-  //       description: null,
-  //       phone: null,
-  //       latitude: -18.8675896,
-  //       longitude: -41.9494066,
-  //     })
-  //   }
-
-  //   const { gyms } = await sut.execute({
-  //     userLatitude: -18.8675896,
-  //     userLongitude: -41.9494066,
-  //   })
-
-  //   expect(gyms).toHaveLength(2)
-  //   expect(gyms).toEqual([
-  //     expect.objectContaining({ title: 'JavaScript Gym 21' }),
-  //     expect.objectContaining({ title: 'JavaScript Gym 22' }),
-  //   ])
-  // })
 })
