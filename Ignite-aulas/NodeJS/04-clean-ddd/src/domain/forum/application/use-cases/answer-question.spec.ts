@@ -1,6 +1,6 @@
 import { AnswerQuestionUseCase } from './answer-question'
 import { AnswerRepository } from '../repositories/answers-repository'
-import { Answer } from '../entities/answer'
+import { Answer } from '@/domain/forum/enterprise/entities/answer'
 import { expect } from 'vitest'
 
 const fakeAnswerRepository: AnswerRepository = {
