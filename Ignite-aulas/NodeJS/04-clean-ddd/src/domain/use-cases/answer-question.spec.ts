@@ -4,9 +4,7 @@ import { Answer } from '../entities/answer'
 import { expect } from 'vitest'
 
 const fakeAnswerRepository: AnswerRepository = {
-  create: async (answer: Answer) => {
-    return
-  },
+  create: async (answer: Answer) => {},
 }
 
 test('create an answer', async () => {
