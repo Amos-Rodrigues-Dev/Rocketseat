@@ -1,19 +1,19 @@
 import { expect } from 'vitest'
 import { InMemoryQuestionsRepository } from 'test/repositories/in-memory-questions-repository'
 import { makeQuestion } from 'test/factories/make-question'
-import { DeleteQuestionUseCase } from './delete-question'
+import { EditQuestionUseCase } from './edit-question'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
-let sut: DeleteQuestionUseCase // system under test
+let sut: EditQuestionUseCase // system under test
 
-describe('Delete Question', () => {
+describe('Edit Question', () => {
   beforeEach(() => {
     inMemoryQuestionsRepository = new InMemoryQuestionsRepository()
-    sut = new DeleteQuestionUseCase(inMemoryQuestionsRepository)
+    sut = new EditQuestionUseCase(inMemoryQuestionsRepository)
   })
 
-  it('should be able to delete a question', async () => {
+  it('should be able to edit a question', async () => {
     const newQuestion = await makeQuestion(
       { authorId: new UniqueEntityId('author-1') },
       new UniqueEntityId('question-1'),
@@ -22,14 +22,19 @@ describe('Delete Question', () => {
     await inMemoryQuestionsRepository.create(newQuestion)
 
     await sut.execute({
-      questionId: 'question-1',
       authorId: 'author-1',
+      questionId: newQuestion.id.toValue(),
+      title: 'Pergunta teste',
+      content: 'Conteúdo teste',
     })
 
-    expect(inMemoryQuestionsRepository.items).toHaveLength(0)
+    expect(inMemoryQuestionsRepository.items[0]).toMatchObject({
+      title: 'Pergunta teste',
+      content: 'Conteúdo teste',
+    })
   })
 
-  it('should not be able to deleted a question from another user', async () => {
+  it('should not be able to edit a question from another user', async () => {
     const newQuestion = await makeQuestion(
       { authorId: new UniqueEntityId('author-1') },
       new UniqueEntityId('question-1'),
@@ -39,8 +44,10 @@ describe('Delete Question', () => {
 
     await expect(() => {
       return sut.execute({
-        questionId: 'question-1',
         authorId: 'author-2',
+        questionId: newQuestion.id.toValue(),
+        title: 'Pergunta teste',
+        content: 'Conteúdo teste',
       })
     }).rejects.toBeInstanceOf(Error)
   })
