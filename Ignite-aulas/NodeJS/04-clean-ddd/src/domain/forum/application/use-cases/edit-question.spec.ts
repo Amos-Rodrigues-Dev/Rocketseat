@@ -14,7 +14,7 @@ describe('Edit Question', () => {
   })
 
   it('should be able to edit a question', async () => {
-    const newQuestion = await makeQuestion(
+    const newQuestion = makeQuestion(
       { authorId: new UniqueEntityId('author-1') },
       new UniqueEntityId('question-1'),
     )
@@ -35,7 +35,7 @@ describe('Edit Question', () => {
   })
 
   it('should not be able to edit a question from another user', async () => {
-    const newQuestion = await makeQuestion(
+    const newQuestion = makeQuestion(
       { authorId: new UniqueEntityId('author-1') },
       new UniqueEntityId('question-1'),
     )
