@@ -2,7 +2,7 @@
 
 Design dirigido à domínio
 
-## Domínio
+## Domínio "área de entendimento do software"
 
 - Domain Experts
   - Conversa
