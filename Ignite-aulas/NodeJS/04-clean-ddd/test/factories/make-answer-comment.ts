@@ -9,7 +9,7 @@ export function makeAnswerComment(
   override: Partial<AnswerCommentProps> = {},
   id?: UniqueEntityId,
 ) {
-  const answer = AnswerComment.create(
+  const answerComment = AnswerComment.create(
     {
       authorId: new UniqueEntityId(),
       answerId: new UniqueEntityId(),
@@ -19,5 +19,5 @@ export function makeAnswerComment(
     id,
   )
 
-  return answer
+  return answerComment
 }
