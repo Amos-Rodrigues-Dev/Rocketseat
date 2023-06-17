@@ -20,3 +20,8 @@ Design dirigido à domínio
 - Subdomínios (Bounded Contexts)
 - Entidades
 - Casos de uso
+
+# Conceitos
+
+- Aggregate - Agregados 
+- WatchedList - Listas observadas
