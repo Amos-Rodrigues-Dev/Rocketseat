@@ -23,7 +23,11 @@ export function Widget() {
         <div className="divide-y-2 divide-zinc-300 dark:divide-zinc-950">
           <Notification.Root>
             <Notification.Icon icon={Rocket} />
-            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat" />
+            <Notification.Content>
+              <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-100">
+                Você recebeu um convite para fazer parte da empresa Rocketseat
+              </p>
+            </Notification.Content>
             <Notification.Actions>
               <Notification.Action onClick={() => {}} icon={X} />
               <Notification.Action
@@ -35,7 +39,11 @@ export function Widget() {
           </Notification.Root>
           <Notification.Root>
             <Notification.Icon icon={Rocket} />
-            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat" />
+            <Notification.Content>
+              <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-100">
+                Você recebeu um convite para fazer parte da empresa Rocketseat
+              </p>
+            </Notification.Content>
             <Notification.Actions>
               <Notification.Action
                 icon={ArrowRight}
@@ -55,10 +63,18 @@ export function Widget() {
         <div className="divide-y-2 divide-zinc-300 dark:divide-zinc-950">
           <Notification.Root>
             <Notification.Icon icon={Rocket} />
-            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat" />
+            <Notification.Content>
+              <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-400">
+                Você recebeu um convite para fazer parte da empresa Rocketseat
+              </p>
+            </Notification.Content>
           </Notification.Root>
           <Notification.Root>
-            <Notification.Content text="Você recebeu um convite para fazer parte da empresa Rocketseat" />
+            <Notification.Content>
+              <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-400">
+                Você recebeu um convite para fazer parte da empresa Rocketseat
+              </p>
+            </Notification.Content>
           </Notification.Root>
         </div>
       </div>

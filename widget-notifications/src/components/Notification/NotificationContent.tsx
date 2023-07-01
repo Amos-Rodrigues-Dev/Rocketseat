@@ -1,22 +1,14 @@
-import { HTMLAttributes } from 'react'
-import { twMerge } from 'tailwind-merge'
+import { HTMLAttributes, ReactNode } from 'react'
 
 interface NotificationContentProps
   extends HTMLAttributes<HTMLParagraphElement> {
-  text: string
+  children: ReactNode
 }
 
-export function NotificationContent({
-  text,
-  ...rest
-}: NotificationContentProps) {
+export function NotificationContent({ children }: NotificationContentProps) {
   return (
-    <div
-      {...rest}
-      className={twMerge('flex-1 flex flex-col gap-2', rest.className)}>
-      <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-100">
-        {text}
-      </p>
+    <div className="flex-1 flex flex-col gap-2">
+      {children}
       <div className="text-xs text-zinc-400 flex items-center gap-1">
         <span>Convite</span>
         <span>Há 3 min</span>
