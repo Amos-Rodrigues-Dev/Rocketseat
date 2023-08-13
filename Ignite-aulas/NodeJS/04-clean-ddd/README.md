@@ -51,3 +51,5 @@ Design dirigido à domínio
 - Notificações ao cliente
 - Promoções 
 - Chat
+
+## Publish/Subscribe
