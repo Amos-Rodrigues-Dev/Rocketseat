@@ -25,3 +25,29 @@ Design dirigido à domínio
 
 - Aggregate - Agregados 
 - WatchedList - Listas observadas
+
+# Subdomínios 
+
+- Core: O que dá dinheiro 
+- Supporting: Dá suporte para o core funcionar
+- Generic: Você precisa deles mas não são tão importantes
+
+## Exemplos
+
+### Core
+
+- Compra
+- Catálogo 
+- Pagamento
+- Entrega
+- Faturamento
+
+### Supporting
+
+- Estoque 
+
+### Generic
+
+- Notificações ao cliente
+- Promoções 
+- Chat
